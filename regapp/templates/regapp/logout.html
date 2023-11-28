@@ -1,0 +1,10 @@
+{% extends 'recipesapp/layout.html' %} {% block content %}
+
+<div class="container">
+  <h2>Ви вийшли з акаунту</h2>
+  <div class="border-top pt-3">
+    <a href="{% url 'login' %}">Увійти знову</a><br />
+    <a href="{% url 'recipes-home' %}">На головну</a>
+  </div>
+</div>
+{% endblock content %}

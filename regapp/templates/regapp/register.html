@@ -1,0 +1,25 @@
+{% extends 'recipesapp/layout.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Реєстрація нового акаунту</legend>
+      {{ form | crispy }}
+    </fieldset>
+    <div class="form-group py-3">
+      <input
+        class="btn btn-outline-primary"
+        type="submit"
+        value="Зареєструватися"
+        id=""
+      />
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <a href="{% url 'login' %}">Вже маєте зареєстрований акаунт? Увійдіть тут.</a>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'recipesapp/layout.html' %} {% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">
+        Ви дійсно хочете видалити цей рецепт з сайту? Видалені рецепти відновленню не підлягають!
+      </legend>
+      {{ form | crispy }}
+    </fieldset>
+    <div class="form-group py-3">
+      <input
+        class="btn btn-outline-danger"
+        type="submit"
+        value="ВИДАЛИТИ"
+        id=""
+      />
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <a href="{% url 'recipes-home' %}">Назад</a>
+  </div>
+</div>
+{% endblock content %}
